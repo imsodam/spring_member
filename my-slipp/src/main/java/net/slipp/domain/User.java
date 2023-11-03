@@ -40,6 +40,10 @@ public class User {
 		this.password = password;
 	}
 	
+	public String getUserId() {
+		return userId;
+	}
+	
 	public boolean matchPassword(String newPassword) {
 		if(newPassword == null) {
 			return false;

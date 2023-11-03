@@ -31,16 +31,21 @@ public class UserController {
 	    User user = userRepository.findByUserId(userId);
 
 	    if (user == null) {
+	    	System.out.println("Login Failure!");
 	        return "redirect:/users/loginForm";
 	    }
 	    
 	    if (!user.matchPassword(password)) {
+	    	System.out.println("Login Failure!");
 	    	return "redirect:/users/loginForm";
 	    }
 
+    	System.out.println("Login Success!");
+
 	    session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, user);
 	    model.addAttribute("user", user); // 사용자 정보를 모델에 추가
-
+	    
+	    
 	    return "redirect:/";
 	}
 	
