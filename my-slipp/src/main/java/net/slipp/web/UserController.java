@@ -28,7 +28,7 @@ public class UserController {
 
 	@PostMapping("/login")
 	public String login(String userId, String password, HttpSession session, Model model) {
-	    User user = userRepository.findByUserId(userId);
+	   User user = userRepository.findByUserId(userId);
 
 	    if (user == null) {
 	    	System.out.println("Login Failure!");
@@ -62,7 +62,7 @@ public class UserController {
 
 	@PostMapping("")
 	public String create(User user) {
-		System.out.println("user : " + user);
+		System.out.println("user : " + user.getUserId());
 //		users.add(user);
 		userRepository.save(user);
 		return "redirect:/users";

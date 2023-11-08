@@ -20,11 +20,6 @@ public class User {
 	private String name;
 	private String email;
 
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
-	
-	
 	public boolean matchId(Long newId){
 		if(newId == null) {
 			return false;
@@ -74,9 +69,5 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
 	}
-
-	
-	
-	
 
 }
